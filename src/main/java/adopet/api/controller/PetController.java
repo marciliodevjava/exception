@@ -28,8 +28,8 @@ public class PetController {
 
     @PostMapping
     @Transactional
-    public ResponseEntity<String> cadastrar(@RequestPart @Valid CadastroPetDTO dados,
-                                            @RequestParam MultipartFile imagem){
+    public ResponseEntity<String> cadastrar(@RequestParam MultipartFile imagem,
+                                            @RequestPart @Valid CadastroPetDTO dados){
         try{
             service.cadastrar(dados, imagem);
         }catch (IOException ex){
