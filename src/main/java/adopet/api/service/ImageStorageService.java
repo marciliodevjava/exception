@@ -33,4 +33,14 @@ public class ImageStorageService {
         return UUID.randomUUID() + extensao;
     }
 
+    public File buscar(String imagem) {
+        String caminho = PASTA_UPLOAD + imagem;
+        File arquivo = new File(caminho);
+
+        if(arquivo.exists()){
+            return arquivo;
+        } else {
+            return null;
+        }
+    }
 }

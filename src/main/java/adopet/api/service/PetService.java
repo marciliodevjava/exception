@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
@@ -30,5 +31,10 @@ public class PetService {
         String nomeImagem = imagemService.upload(imagem);
 
         repository.save(new Pet(dto, nomeImagem));
+    }
+
+    public File buscarImagem(String imagem) {
+        File img = imagemService.buscar(imagem);
+        return img;
     }
 }
