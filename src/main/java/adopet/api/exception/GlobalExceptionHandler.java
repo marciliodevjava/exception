@@ -11,8 +11,7 @@ import java.time.LocalDateTime;
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(AdocaoException.class)
-    public ResponseEntity<ResponseError> adocaoException(AdocaoException ex){
-
+    public ResponseEntity<ResponseError> adocaoException(AdocaoException ex) {
         ResponseError response = new ResponseError(
                 ex.getMessage(),
                 HttpStatus.BAD_REQUEST,
@@ -23,8 +22,7 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<ResponseError> trataException(Exception ex){
-
+    public ResponseEntity<ResponseError> trataException(Exception ex) {
         ResponseError response = new ResponseError(
                 ex.getMessage(),
                 HttpStatus.BAD_REQUEST,
@@ -33,7 +31,5 @@ public class GlobalExceptionHandler {
 
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
     }
-
-
 
 }
