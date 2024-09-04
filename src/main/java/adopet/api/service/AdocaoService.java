@@ -56,7 +56,7 @@ public class AdocaoService {
 
         Integer tutorAdocoes = adocaoRepository.countByTutorIdAndStatus(dto.idTutor(),StatusAdocao.APROVADO);
 
-        if (tutorAdocoes == 2){
+        if (tutorAdocoes >= 2){
             throw new AdocaoException("Tutor com máximo de adocoes");
         }
 
